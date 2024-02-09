@@ -1,8 +1,9 @@
-let boxes = document.querySelectorAll(".box");
-let resetBtn = document.querySelector("#reset-btn");
-let newGameBtn = document.querySelector("#new-btn");
-let msgContainer = document.querySelector(".msg-container");
-let msg = document.querySelector("#msg");
+const boxes = document.querySelectorAll(".box");
+const resetBtn = document.querySelector("#reset-btn");
+const newGameBtn = document.querySelector("#new-btn");
+const msgContainer = document.querySelector(".msg-container");
+const msg = document.querySelector("#msg");
+const mainContainer = document.querySelector("#main-container")
 
 let turnO = true; //playerX, playerO
 let count = 0; //To Track Draw
@@ -23,6 +24,7 @@ const resetGame = () => {
   count = 0;
   enableBoxes();
   msgContainer.classList.add("hide");
+  mainContainer.classList.remove("hide")
 };
 
 boxes.forEach((box) => {
@@ -50,6 +52,7 @@ boxes.forEach((box) => {
 const gameDraw = () => {
   msg.innerText = `Game was a Draw.`;
   msgContainer.classList.remove("hide");
+  mainContainer.classList.add("hide");
   disableBoxes();
 };
 
@@ -69,6 +72,7 @@ const enableBoxes = () => {
 const showWinner = (winner) => {
   msg.innerText = `Congratulations, Winner is ${winner}`;
   msgContainer.classList.remove("hide");
+  mainContainer.classList.add("hide");
   disableBoxes();
 };
 
