@@ -12,6 +12,14 @@ body{
     margin-top: 50px;
 }
 
+.subHeading{
+    font-family: cursive;
+    padding-top: 10px;
+    color:#cedfdf;
+    font-weight: 700;
+    transition: .5s;
+}
+
 .container{
     height: 70vh;
     display: flex;
